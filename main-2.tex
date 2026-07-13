@@ -58,9 +58,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[]
-% \color{black}\titlerule \vspace{-5pt}
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{\underline}[]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \ifdefined\pdfgentounicode
@@ -97,9 +96,9 @@
 \newcommand{\resumeEducationHeading}[6]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
-      \small#5 & \small #6 \\
+      #1 & #2 \\
+      #3 & #4 \\
+      #5 & #6 \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -124,8 +123,10 @@
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeBulletListStart}{\begin{itemize}[leftmargin=0.22in, label={--}, topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeBulletListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
@@ -155,19 +156,15 @@
 
 
 
-\section{Саммари}
+\section{О себе}
   \vspace{2pt}
-  \resumeSubHeadingListStart
-    \small{\item{Геоаналитик уровня Middle+ с 5 годами опыта. Перевожу сложные данные в прикладные решения для бизнеса и города.
-
-Специализируюсь на пространственном анализе городской и транспортной инфраструктуры и графовых моделях.
-
-Повышал доступность сервисов, максимизировал входящие потоки, оптимизировал маршруты.
-
-Работаю на Python с библиотеками OSMnx, PySAL, Networkx; владею SQL, Git, Linux. \vspace{3pt}
-        
-    }}
-  \resumeSubHeadingListEnd
+  \resumeBulletListStart
+    \item Геоаналитик уровня Middle+ с 5 годами опыта.
+    \item Перевожу сложные данные в прикладные решения для бизнеса и города.
+    \item Специализируюсь на пространственном анализе городской и транспортной инфраструктуры и графовых моделях.
+    \item Повышал доступность сервисов, максимизировал входящие потоки, оптимизировал маршруты.
+    \item Работаю на Python с библиотеками OSMnx, PySAL, Networkx; владею SQL, Git, Linux.
+  \resumeBulletListEnd
 
 
 
@@ -176,11 +173,7 @@
 \section{Навыки}
   \vspace{2pt}
   \resumeSubHeadingListStart
-    \small{\item{
-        
-        {Python, SQL, Git, GeoPandas, Shapely, OSMnx, Networkx, PySAL, PostGIS, Linux} \\ \vspace{3pt}
-        
-    }}
+    \item Python, SQL, Git, GeoPandas, Shapely, OSMnx, Networkx, PySAL, PostGIS, Linux.
   \resumeSubHeadingListEnd
 
 
@@ -188,50 +181,35 @@
 %----------- EXPERIENCE -----------
 
 \section{Опыт работы}
-   \vspace{2pt}
-   \resumeSubHeadingListStart
-   \resumeSubheading
-       {Институт дизайна и урбанистики ИТМО}{Сентябрь 2021 \textbf{--} Июль 2026}
-       {}{}
-       
-       
-       R\&D‑лаборатория по разработке IT‑решений для городской среды, исполнительный партнер Сбера, OTS Lab, MLA+, Urbanica. 
-        
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {Геоаналитик | Институт дизайна и урбанистики ИТМО}{Сентябрь 2021 \textbf{--} Июль 2026}
+      {}{}
 
-   \resumeSubheading
-       {Геоаналитик}{}
+  R\&D-лаборатория по разработке IT-решений для городской среды, исполнительный партнер Сбера, OTS Lab, MLA+, Urbanica.
 
-       
-       {\parbox[t]{.98\textwidth}
-       
-   		{-- Определил приоритеты развития транспортной сети и размещения логистических хабов для повышения доступности сервисов и эффективности логистики на основе анализа 32 пространственных графов с учетом транспортной структуры и климатических факторов.}}
+  \resumeSubheading
+      {}{}{}{}
+  \resumeSubHeadingListEnd
+  \resumeBulletListStart
+      \item Определил приоритеты развития транспортной сети и размещения логистических хабов для повышения доступности сервисов и эффективности логистики на основе анализа 32 пространственных графов с учетом транспортной структуры и климатических факторов.
+      \item Ускорил построение маршрутов до 80 раз при управляемой точности за счёт кластеризации дорожного графа и сокращения области поиска кратчайшего пути.
+      \item Повысил точность прогнозирования миграционных потоков, восстановив неполный граф связей между населенными пунктами с помощью гравитационной модели.
+      \item Автоматизировал подбор характеристик узлов сети для максимизации входящих потоков, обучив CatBoost-модель на параметрах качества жизни населенных пунктов.
+      \item Оценил численность населения по каждому дому города, восстановив пропущенные данные о высотности зданий с точностью до 1 этажа и ошибкой менее 15\% с помощью дерева решений и пространственной автокорреляции.
+      \item Ускорил обработку жалоб горожан в соцсетях за счёт разработки алгоритма извлечения адресов из неструктурированного текста и перехода с платного геокодера на бесплатный.
+  \resumeBulletListEnd
 
-       {\parbox[t]{.98\textwidth}
-       
-   		{-- Ускорил построение маршрутов до 80 раз при управляемой точности за счёт кластеризации дорожного графа и сокращения области поиска кратчайшего пути.}}
-
-       
-       {\parbox[t]{.98\textwidth}
-       
-   		{-- Повысил точность прогнозирования миграционных потоков, восстановив неполный граф связей между населенными пунктами с помощью гравитационной модели.}}
-   		{\parbox[t]{.98\textwidth}
-   		{-- Автоматизировал подбор характеристик узлов сети для максимизации входящих потоков, обучив CatBoost-модель на параметрах качества жизни населенных пунктов.}}
-   		
-   		
-   		{\parbox[t]{.98\textwidth}
-       
-   		{-- Оценил численность населения по каждому дому города, восстановив пропущенные данные о высотности зданий с точностью до 1 этажа и ошибкой менее 15\% с помощью дерева решений и пространственной автокорреляции.}}
-
-
-		{\parbox[t]{.98\textwidth}
-       
-   		{-- Ускорил обработку жалоб горожан в соцсетях за счёт разработки алгоритма извлечения адресов из неструктурированного текста и перехода с платного геокодера на бесплатный.}}
-
-
-
-
-   \resumeSubHeadingListEnd
 %----------- EDUCATION -----------
+
+\section{Научно-преподавательская деятельность}
+  \vspace{2pt}
+  \resumeBulletListStart
+    \item Разработал и провел 3 потока магистерского курса по пространственному анализу для студентов-урбанистов на английском языке. Научил с нуля обрабатывать сырые данные и проводить пространственный анализ и моделирование.
+    \item Участник международных научных конференций, включая конференции высшего уровня A* в IT сфере (AAAI'26 AI for Urban Planning Workshop).
+    \item Автор 12 научных публикаций, из них 3 — в журналах Q1 и 2 — в журналах Q2. \href{https://scholar.google.com/citations?user=S--bTg8AAAAJ&hl=ru}{Ссылка на Scholar.}
+  \resumeBulletListEnd
 
 \section{Образование}
   \vspace{3pt}
@@ -244,7 +222,6 @@
    {Магистратура: Прикладная информатика}  {2023}
     
   \resumeSubHeadingListEnd
-
 
         
 \end{document}
